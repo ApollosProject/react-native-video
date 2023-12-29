@@ -256,6 +256,17 @@ class ReactExoplayerView extends FrameLayout implements
         isInBackground = false;
     }
 
+    public void setShowControlsModifier(final boolean showControls) {
+        if(player == null) return;
+        reLayout(playerControlView);
+        if (showControls) {
+            playerControlView.show();
+        }
+        else {
+            playerControlView.hide();
+        }
+    }
+
     @Override
     public void onHostPause() {
         isInBackground = true;

@@ -71,6 +71,8 @@ public class ReactExoplayerViewManager extends ViewGroupManager<ReactExoplayerVi
     private static final String PROP_HIDE_SHUTTER_VIEW = "hideShutterView";
     private static final String PROP_CONTROLS = "controls";
 
+    public static final String PROP_SHOW_CONTROLS = "showControls";
+
     private ReactExoplayerConfig config;
 
     public ReactExoplayerViewManager(ReactExoplayerConfig config) {
@@ -313,6 +315,11 @@ public class ReactExoplayerViewManager extends ViewGroupManager<ReactExoplayerVi
     public void setControls(final ReactExoplayerView videoView, final boolean controls) {
         videoView.setControls(controls);
     }
+
+    @ReactProp(name = PROP_SHOW_CONTROLS, defaultBoolean = false)
+    public void setShowControls(final ReactExoplayerView videoView, final boolean control) {
+              videoView.setShowControlsModifier(control);
+            }
 
     @ReactProp(name = PROP_BUFFER_CONFIG)
     public void setBufferConfig(final ReactExoplayerView videoView, @Nullable ReadableMap bufferConfig) {

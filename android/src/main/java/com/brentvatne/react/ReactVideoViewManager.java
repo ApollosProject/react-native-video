@@ -29,6 +29,7 @@ public class ReactVideoViewManager extends SimpleViewManager<ReactVideoView> {
     public static final String PROP_RESIZE_MODE = "resizeMode";
     public static final String PROP_REPEAT = "repeat";
     public static final String PROP_PAUSED = "paused";
+    public static final String PROP_SHOW_CONTROLS = "showControls";
     public static final String PROP_MUTED = "muted";
     public static final String PROP_PREVENTS_DISPLAY_SLEEP_DURING_VIDEO_PLAYBACK = "preventsDisplaySleepDuringVideoPlayback";
     public static final String PROP_VOLUME = "volume";
@@ -123,6 +124,11 @@ public class ReactVideoViewManager extends SimpleViewManager<ReactVideoView> {
     @ReactProp(name = PROP_PAUSED, defaultBoolean = false)
     public void setPaused(final ReactVideoView videoView, final boolean paused) {
         videoView.setPausedModifier(paused);
+    }
+
+    @ReactProp(name = PROP_SHOW_CONTROLS, defaultBoolean = false)
+    public void setShowControls(final ReactVideoView videoView, final boolean control) {
+      videoView.setShowControlsModifier(control);
     }
 
     @ReactProp(name = PROP_MUTED, defaultBoolean = false)

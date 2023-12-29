@@ -413,6 +413,14 @@ public class ReactVideoView extends ScalableVideoView implements
         setKeepScreenOn(!mPaused && mPreventsDisplaySleepDuringVideoPlayback);
     }
 
+
+  public void setShowControlsModifier(final boolean paused) {
+    if (mUseNativeControls) {
+      initializeMediaControllerIfNeeded();
+      mediaController.show();
+    }
+  }
+
     // reduces the volume based on stereoPan
     private float calulateRelativeVolume() {
         float relativeVolume = (mVolume * (1 - Math.abs(mStereoPan)));
